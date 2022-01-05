@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--custom css file link-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Search Valorant agents</h1>
+        
+        <input type="text" id="search-box" placeholder="search agents">
+
+        <div class="image-container">
+            <div class="image" data-classe="initiator" data-name="breach">
+                <img src="images/breach_ccexpress.png" alt="breach-initiator">
+                <h3>Breach - Initiator</h3>
+            </div>
+
+            <div class="image" data-classe="controller" data-name="brimstone">
+                <img src="images/brimstone_ccexpress.png" alt="brimstone-controller">
+                <h3>Brimstone - Controller</h3>
+            </div>
+
+            <div class="image" data-classe="sentinel" data-name="cypher">
+                <img src="images/cypher_ccexpress.png" alt="cypher-sentinel">
+                <h3>Cypher - Sentinel</h3>
+            </div>
+
+            <div class="image" data-classe="duelist" data-name="jett">
+                <img src="images/jett_ccexpress.png" alt="jett-duelist">
+                <h3>Jett - Duelist</h3>
+            </div>
+
+            <div class="image" data-classe="sentinel" data-name="killjoy">
+                <img src="images/killjoy_ccexpress.png" alt="killjoy-sentinel">
+                <h3>Killjoy - Sentinel</h3>
+            </div>
+
+            <div class="image" data-classe="controller" data-name="omen">
+                <img src="images/omen_ccexpress.png" alt="omen-controller">
+                <h3>Omen - Controller</h3>
+            </div>
+
+            <div class="image" data-classe="duelist" data-name="phoenix">
+                <img src="images/phoenix_ccexpress.png" alt="phoenix-duelist">
+                <h3>Phoenix - Duelist</h3>
+            </div>
+
+            <div class="image" data-classe="duelist" data-name="raze">
+                <img src="images/raze_ccexpress.png" alt="raze-duelist">
+                <h3>Raze - Duelist</h3>
+            </div>
+
+            <div class="image" data-classe="duelist" data-name="reyna">
+                <img src="images/reyna_ccexpress.png" alt="reyna-duelist">
+                <h3>Reyna - Duelist</h3>
+            </div>
+
+            <div class="image" data-classe="sentinel" data-name="sage">
+                <img src="images/sage_ccexpress.png" alt="sage-sentinel">
+                <h3>Sage - Sentinel</h3>
+            </div>
+
+            <div class="image" data-classe="initiator" data-name="skye">
+                <img src="images/skye_ccexpress.png" alt="skye-initiator">
+                <h3>Skye - Initiator</h3>
+            </div>
+
+            <div class="image" data-classe="initiator" data-name="sova">
+                <img src="images/sova_ccexpress.png" alt="sova-initiator">
+                <h3>Sova - Initiator</h3>
+            </div>
+
+            <div class="image" data-classe="controller" data-name="viper">
+                <img src="images/viper_ccexpress.png" alt="viper-controller">
+                <h3>Viper -  Controller</h3>
+            </div>
+
+            <div class="image" data-classe="duelist" data-name="yoru">
+                <img src="images/yoru_ccexpress.png" alt="yoru-duelist">
+                <h3>Yoru - Duelist</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        let searchBox = document.querySelector('#search-box');
+        let images = document.querySelectorAll('.container .image-container .image');
+        
+        searchBox.oninput = () =>{
+           images.forEach(hide => hide.style.display = 'none');
+           let value = searchBox.value;
+           images.forEach(filter =>{
+              let title = filter.getAttribute('data-name');
+              let classe = filter.getAttribute('data-classe');
+              if(value == title){
+                 filter.style.display = 'block';
+              }
+              if(value == classe){
+                 filter.style.display = 'block';
+              }
+              if(searchBox.value == ''){
+                 filter.style.display = 'block';
+              }
+           });
+        };
+        
+    </script>
+    
+</body>
+</html>
