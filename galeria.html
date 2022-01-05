@@ -97,9 +97,9 @@
            images.forEach(hide => hide.style.display = 'none');
            let value = searchBox.value;
            images.forEach(filter =>{
-              let title = filter.getAttribute('data-name');
+              let name = filter.getAttribute('data-name');
               let classe = filter.getAttribute('data-classe');
-              if(value == title){
+              if(value == name){
                  filter.style.display = 'block';
               }
               if(value == classe){
